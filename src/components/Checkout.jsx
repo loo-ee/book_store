@@ -1,6 +1,6 @@
 import '../styles/Checkout.css'
 
-const Checkout = ({ selectedBook, showCheckoutPage }) => {
+const Checkout = ({ showCheckoutPage }) => {
   return (
     <div id="checkout">
       <h3>Proceed to Payment</h3>
