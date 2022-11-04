@@ -1,33 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
+import './styles/App.css'
+import BookSelection from './components/BookSelection'
 
-function App() {
-  const [count, setCount] = useState(0)
+function App({ books }) {
+  const [selectedBook, setSelectedBook] = useState(0)
+  const [showCheckoutStatus, setShowCheckoutStatus] = useState(false)
+
+  useEffect(() => {
+    console.log(selectedBook)
+  }, [selectedBook])
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <>
+      <BookSelection
+        books={books}
+        selectedBook={selectedBook}
+        setSelectedBook={setSelectedBook}
+        setShowCheckoutStatus={setShowCheckoutStatus}
+      />
+      <div id="preview-page">Test</div>
+    </>
   )
 }
 

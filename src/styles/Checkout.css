@@ -1,0 +1,27 @@
+#checkout {
+  width: 400px;
+  height: 50px;
+  position: relative;
+  background-color: #f1faee;
+  border: 4px;
+  border-style: solid;
+  border-color: #1d3557;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  bottom: 35px;
+  left: 36px;
+
+  border-radius: 10px;
+}
+
+#checkout-button {
+  margin-left: 20px;
+  padding: 5px;
+  background-color: #457b9d;
+  color: #f1faee;
+  border-radius: 5px;
+}

@@ -1,0 +1,24 @@
+#book-selection-page {
+  padding: 10px;
+  width: 500px;
+  border: 4px;
+  border-style: solid;
+  border-radius: 5px;
+  margin-left: 20px;
+  background-color: #e63946;
+}
+
+#book-selection-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#books-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  height: 600px;
+}

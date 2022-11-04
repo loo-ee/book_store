@@ -1,0 +1,69 @@
+.book {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: #a8dadc;
+}
+
+.thmb {
+  width: 100px;
+  height: 160px;
+  align-self: center;
+}
+
+#books-container div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.book-info {
+  align-self: center;
+  padding: 5px;
+  margin-left: 5px;
+  width: 250px;
+}
+
+.book-info-top h4 {
+  width: 90%;
+  padding: 5px;
+  border: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  text-align: center;
+  border-color: #1d3557;
+}
+
+.book-info-bot {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.book-info-bot h3 {
+  width: 100px;
+  padding: 5px;
+  border: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: #f1faee;
+
+  text-align: center;
+  margin-left: -5px;
+}
+
+.select-btn {
+  font-size: 15px;
+  padding: 5px;
+  width: 100px;
+  height: 35px;
+  margin-right: 5px;
+  background-color: #457b9d;
+  color: #f1faee;
+  border: 2px;
+  border-style: solid;
+  border-radius: 5px;
+}
