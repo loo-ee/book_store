@@ -5,19 +5,20 @@ import Checkout from './Checkout'
 
 const BookSelection = ({
   books,
-  selectedBook,
   setSelectedBook,
-  setShowCheckoutStatus,
+  setPreviewState,
+  setCheckoutStatus,
 }) => {
-  const [checkoutStatus, setCheckoutStatus] = useState(false)
+  const [isBookSelected, setIsBookSelected] = useState(false)
 
-  const checkout = (bookID) => {
+  const showPreview = (bookID) => {
     setSelectedBook(bookID)
-    setCheckoutStatus(true)
+    setPreviewState(true)
+    setIsBookSelected(true)
   }
 
   const showCheckoutPage = () => {
-    setShowCheckoutStatus(true)
+    setCheckoutStatus(true)
   }
 
   return (
@@ -27,10 +28,10 @@ const BookSelection = ({
       </div>
       <div id="books-container">
         {books.map((book) => (
-          <Book key={book.id} book={book} checkout={checkout} />
+          <Book key={book.id} book={book} showPreview={showPreview} />
         ))}
       </div>
-      {checkoutStatus && <Checkout showCheckoutPage={showCheckoutPage} />}
+      {isBookSelected && <Checkout showCheckoutPage={showCheckoutPage} />}
     </div>
   )
 }

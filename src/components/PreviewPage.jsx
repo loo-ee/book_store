@@ -1,8 +1,10 @@
 import '../styles/PreviewPage.css'
 
-const PreviewPage = ({ book }) => {
-  return (
-    <div id="preview-page">
+const PreviewPage = ({ book, previewState }) => {
+  let preview
+
+  if (previewState) {
+    preview = (
       <div id="book-preview">
         <h1 id="book-preview-title">{book.title}</h1>
 
@@ -23,8 +25,22 @@ const PreviewPage = ({ book }) => {
           </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  } else {
+    preview = (
+      <div id="book-preview">
+        <div id="book-preview">
+          <h1 id="book-preview-title">Select a book to preview</h1>
+          <div id="book-preview-top">
+            <img id="book-preview-img" src="./src/assets/preview.png" alt="" />
+            <div id="book-preview-bot">Details will show here</div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return <div id="preview-page">{preview}</div>
 }
 
 export default PreviewPage

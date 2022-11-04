@@ -5,7 +5,8 @@ import PreviewPage from './components/PreviewPage'
 
 function App({ books }) {
   const [selectedBook, setSelectedBook] = useState(0)
-  const [showCheckoutStatus, setShowCheckoutStatus] = useState(false)
+  const [checkoutStatus, setCheckoutStatus] = useState(false)
+  const [previewState, setPreviewState] = useState(false)
 
   useEffect(() => {
     console.log(selectedBook)
@@ -17,9 +18,10 @@ function App({ books }) {
         books={books}
         selectedBook={selectedBook}
         setSelectedBook={setSelectedBook}
-        setShowCheckoutStatus={setShowCheckoutStatus}
+        setPreviewState={setPreviewState}
+        setCheckoutStatus={setCheckoutStatus}
       />
-      {showCheckoutStatus && <PreviewPage book={books[selectedBook - 1]} />}
+      <PreviewPage book={books[selectedBook - 1]} previewState={previewState} />
     </>
   )
 }

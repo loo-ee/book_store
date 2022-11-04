@@ -1,6 +1,6 @@
 import '../styles/Book.css'
 
-const Book = ({ book, checkout }) => {
+const Book = ({ book, showPreview }) => {
   return (
     <div id={`book${book.id}`} className="book">
       <img className="thmb" src={book.source} alt="" />
@@ -10,7 +10,7 @@ const Book = ({ book, checkout }) => {
         </div>
         <div className="book-info-bot">
           <h3>${book.price}</h3>
-          <button className="select-btn" onClick={() => checkout(book.id)}>
+          <button className="select-btn" onClick={() => showPreview(book.id)}>
             Select
           </button>
         </div>
