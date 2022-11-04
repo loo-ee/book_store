@@ -9,7 +9,10 @@ const PreviewPage = ({ book, previewState }) => {
         <h1 id="book-preview-title">{book.title}</h1>
 
         <div id="book-preview-top">
-          <img src={book.source} alt="" />
+          <img
+            src={new URL(`../assets/${book.source}`, import.meta.url)}
+            alt=""
+          />
 
           <div id="book-preview-bot">
             <div className="book-details-half">

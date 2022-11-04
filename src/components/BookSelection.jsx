@@ -17,7 +17,7 @@ const BookSelection = ({
     setIsBookSelected(true)
   }
 
-  const showCheckoutPage = () => {
+  const showCounter = () => {
     setCheckoutStatus(true)
   }
 
@@ -31,7 +31,7 @@ const BookSelection = ({
           <Book key={book.id} book={book} showPreview={showPreview} />
         ))}
       </div>
-      {isBookSelected && <Checkout showCheckoutPage={showCheckoutPage} />}
+      {isBookSelected && <Checkout showCounter={showCounter} />}
     </div>
   )
 }
