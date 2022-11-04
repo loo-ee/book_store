@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './styles/App.css'
 import BookSelection from './components/BookSelection'
+import PreviewPage from './components/PreviewPage'
 
 function App({ books }) {
   const [selectedBook, setSelectedBook] = useState(0)
@@ -18,7 +19,7 @@ function App({ books }) {
         setSelectedBook={setSelectedBook}
         setShowCheckoutStatus={setShowCheckoutStatus}
       />
-      <div id="preview-page">Test</div>
+      {showCheckoutStatus && <PreviewPage book={books[selectedBook - 1]} />}
     </>
   )
 }

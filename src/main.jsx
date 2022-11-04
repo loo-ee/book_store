@@ -36,7 +36,7 @@ const books = [
     genre: 'javascript',
   },
   {
-    id: -1,
+    id: 4,
     title: 'Let the app decide for me',
     price: '???',
     source: './src/assets/red-random.png',
