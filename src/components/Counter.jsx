@@ -1,6 +1,24 @@
+import { useState } from 'react'
 import '../styles/Counter.css'
+import PaymentResult from './PaymentResult'
 
 const Counter = ({ book, removeCounter }) => {
+  const [isPaymentValid, setPaymentValidity] = useState(false)
+  const [moneyPaid, setMoneyPaid] = useState(0)
+  const [isMoneyInput, setIsMoneyInput] = useState(false)
+
+  const processPayment = (moneyInput) => {
+    setIsMoneyInput(true)
+
+    if (moneyInput >= book.price) {
+      setPaymentValidity(true)
+      setMoneyPaid(moneyInput)
+      return
+    }
+
+    setPaymentValidity(false)
+  }
+
   return (
     <div id="counter">
       <div id="counter-header">
@@ -10,7 +28,7 @@ const Counter = ({ book, removeCounter }) => {
           alt=""
         />
         <h2 id="store-name">Louie's Book Store</h2>
-        <button id="exit-counter-btn" onClick={() => removeCounter()}>
+        <button id="exit-counter-btn" onClick={removeCounter}>
           &#10060;
         </button>
       </div>
@@ -29,13 +47,23 @@ const Counter = ({ book, removeCounter }) => {
         </div>
         <div id="payment">
           <div id="money-input">
-            <label id="money-input-label">Input Money</label>
-            <input type="number" id="money-input-field" />
+            <label id="money-input-label">Input Money: </label>
+            <input type="number" id="money_input_field" />
           </div>
-          <button id="submit-money-btn" onClick={() => processPayment()}>
+          <button
+            id="submit-money-btn"
+            onClick={() => processPayment(money_input_field.value)}
+          >
             Buy
           </button>
         </div>
+        {isMoneyInput && (
+          <PaymentResult
+            moneyPaid={moneyPaid}
+            isPaymentValid={isPaymentValid}
+            book={book}
+          />
+        )}
       </div>
     </div>
   )
