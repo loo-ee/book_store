@@ -2,11 +2,14 @@
   "name": "book_store",
   "private": true,
   "version": "0.0.0",
+  "homepage": "http://louie523202.github.io/book-store",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
