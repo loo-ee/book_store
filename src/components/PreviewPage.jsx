@@ -35,7 +35,11 @@ const PreviewPage = ({ book, previewState }) => {
         <div id="book-preview">
           <h1 id="book-preview-title">Select a book to preview</h1>
           <div id="book-preview-top">
-            <img id="book-preview-img" src="./src/assets/preview.png" alt="" />
+            <img
+              id="book-preview-img"
+              src={new URL('../assets/preview.png', import.meta.url)}
+              alt=""
+            />
             <div id="book-preview-bot">Details will show here</div>
           </div>
         </div>
